@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تبدیل کننده دما</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+  <svg style="display: none;">
+    <symbol id="convert" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path fill-rule="evenodd"
+        d="M15.97 2.47a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H7.5a.75.75 0 0 1 0-1.5h11.69l-3.22-3.22a.75.75 0 0 1 0-1.06Zm-7.94 9a.75.75 0 0 1 0 1.06l-3.22 3.22H16.5a.75.75 0 0 1 0 1.5H4.81l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 0Z"
+        clip-rule="evenodd" />
+    </symbol>
+  </svg>
+
+  <div class="container">
+    <h1>برنامه ای جهت تبدیل دمای "سلسیوس" به "فارنهایت" و بالعکس - محمدرضا یعقوبی</h1>
+
+    <div class="temperature_box">
+      <div class="wrapper">
+        <h4 class="temperature_box__title celsius">سلسیوس</h4>
+        <input type="number" class="celsius">
+      </div>
+      <svg class="converter-icon">
+        <use href="#convert"></use>
+      </svg>
+      <div class="wrapper">
+        <h4 class="temperature_box__title fahrenheit">فارنهایت</h4>
+        <input type="number" class="fahrenheit">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

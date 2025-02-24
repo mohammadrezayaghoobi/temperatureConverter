@@ -1,0 +1,97 @@
+@import "./font.css";
+
+:root {
+  --backColorPrimary: #F2EFE7;
+  --backColorSecondary: #48A6A7;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "vazir";
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--backColorPrimary);
+}
+
+.container {
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container>h1 {
+  font-size: 24px;
+  background-color: var(--backColorSecondary);
+  color: var(--backColorPrimary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.temperature_box {
+  background-color: var(--backColorSecondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: #fff;
+  padding: 3.5rem 2rem 2.5rem;
+  border-radius: 16px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.wrapper>h4 {
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  top: -1.75rem;
+}
+
+.wrapper>input[type=number] {
+  background-color: var(--backColorPrimary);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: 24px;
+  max-width: 100px;
+  padding: 0.5rem 0.25rem;
+  direction: ltr;
+  text-align: center;
+  color: var(--backColorSecondary);
+
+  /* Remove Arrows/Spinners */
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.converter-icon {
+  width: 24px;
+  height: 24px;
+}
