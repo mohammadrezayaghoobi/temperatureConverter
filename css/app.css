@@ -3,6 +3,7 @@
 :root {
   --backColorPrimary: #F2EFE7;
   --backColorSecondary: #48A6A7;
+  --backColorThird: #2973B2;
 }
 
 *,
@@ -20,6 +21,8 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--backColorPrimary);
+  overflow-x: hidden;
+  position: relative;
 }
 
 .container {
@@ -31,19 +34,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* flex-direction: column; */
+  gap: 4rem;
+  flex-wrap: wrap;
 }
 
-.container>h1 {
+h1.header {
   font-size: 24px;
   background-color: var(--backColorSecondary);
   color: var(--backColorPrimary);
-  position: fixed;
+  padding: 1rem;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   text-align: center;
   font-weight: normal;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+
+.color-dif {
+  color: var(--backColorThird);
+  background-color: var(--backColorPrimary);
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+}
+
 
 .temperature_box {
   background-color: var(--backColorSecondary);
@@ -54,6 +70,8 @@ body {
   color: #fff;
   padding: 3.5rem 2rem 2.5rem;
   border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: relative;
 }
 
 .wrapper {
@@ -70,7 +88,7 @@ body {
   top: -1.75rem;
 }
 
-.wrapper>input[type=number] {
+.wrapper>input[type=text] {
   background-color: var(--backColorPrimary);
   border: none;
   outline: none;
@@ -81,18 +99,56 @@ body {
   direction: ltr;
   text-align: center;
   color: var(--backColorSecondary);
-
-  /* Remove Arrows/Spinners */
-  -moz-appearance: textfield;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+  /* box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px; */
 }
 
 .converter-icon {
   width: 24px;
   height: 24px;
+}
+
+.delete_wrapper {
+  position: absolute;
+  bottom: -100%;
+  transform: translateY(-135%);
+  background-color: #B8001F;
+  padding: 1rem 3rem;
+  border-radius: 0 0 16px 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: none;
+  outline: none;
+  font-family: "vazir";
+  cursor: pointer;
+  color: var(--backColorPrimary);
+  display: none;
+  font-size: 18px;
+}
+
+.delete_wrapper.show {
+  display: block;
+}
+
+.option_wrapper {
+  background-color: var(--backColorSecondary);
+  color: var(--backColorPrimary);
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.option_wrapper .deg {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.option_wrapper .deg label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.option_wrapper .deg input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }

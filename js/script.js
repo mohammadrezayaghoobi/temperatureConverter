@@ -1,5 +1,29 @@
 const celsiusInput = document.querySelector("input.celsius");
 const fahrenheitInput = document.querySelector("input.fahrenheit");
+const showDegInput = document.querySelector("#showDeg");
+const showDeleteInput = document.querySelector("#showBtnDelete");
+const clearBtn = document.querySelector("#clearBtn");
+
+let isShowDeg = showDegInput.checked;
+
+showDegInput.addEventListener("input", (event) => {
+  const el = event.target.checked;
+  isShowDeg = el;
+});
+
+showDeleteInput.addEventListener("input", (event) => {
+  const el = event.target.checked;
+  if (el) {
+    clearBtn.classList.add("show");
+  } else {
+    clearBtn.classList.remove("show");
+  }
+});
+
+clearBtn.addEventListener("click", () => {
+  fahrenheitInput.value = "";
+  celsiusInput.value = "";
+});
 
 function handleCelsiusToFahrenheit(celsius) {
   const fahrenheit = celsius * 1.8 + 32;
@@ -12,14 +36,16 @@ function handleFahrenheitToCelsius(fahrenheit) {
 }
 
 function ShowFahrenheit(event) {
-  const celsiusValue = event.target.value;
-  fahrenheitInput.value = handleCelsiusToFahrenheit(celsiusValue);
+  const celsiusValue = event.target.value?.split("°").at(0);
+  fahrenheitInput.value =
+    handleCelsiusToFahrenheit(celsiusValue) + (isShowDeg ? "°F" : "");
   isInpusEmpty();
 }
 
 function handleShowCelsius(event) {
-  const fahrenheitValue = event.target.value;
-  celsiusInput.value = handleFahrenheitToCelsius(fahrenheitValue);
+  const fahrenheitValue = event.target.value?.split("°").at(0);
+  celsiusInput.value =
+    handleFahrenheitToCelsius(fahrenheitValue) + (isShowDeg ? "°C" : "");
   isInpusEmpty();
 }
 

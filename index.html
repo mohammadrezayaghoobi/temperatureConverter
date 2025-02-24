@@ -17,20 +17,36 @@
     </symbol>
   </svg>
 
+  <h1 class="header">برنامه ای جهت تبدیل دمای <span class="color-dif">سلسیوس</span> به <span
+      class="color-dif">فارنهایت</span> و بالعکس - محمدرضا یعقوبی
+  </h1>
   <div class="container">
-    <h1>برنامه ای جهت تبدیل دمای "سلسیوس" به "فارنهایت" و بالعکس - محمدرضا یعقوبی</h1>
 
     <div class="temperature_box">
       <div class="wrapper">
         <h4 class="temperature_box__title celsius">سلسیوس</h4>
-        <input type="number" class="celsius">
+        <input type="text" class="celsius">
       </div>
       <svg class="converter-icon">
         <use href="#convert"></use>
       </svg>
       <div class="wrapper">
         <h4 class="temperature_box__title fahrenheit">فارنهایت</h4>
-        <input type="number" class="fahrenheit">
+        <input type="text" class="fahrenheit">
+      </div>
+
+      <button id="clearBtn" class="delete_wrapper">پاکسازی</button>
+
+    </div>
+
+    <div class="option_wrapper">
+      <div class="deg">
+        <label for="showDeg">نمایش درجه</label>
+        <input type="checkbox" id="showDeg">
+      </div>
+      <div class="deg">
+        <label for="showBtnDelete">نمایش پاکسازی</label>
+        <input type="checkbox" id="showBtnDelete">
       </div>
     </div>
   </div>
